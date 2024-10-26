@@ -29,15 +29,9 @@ const allUsers = [
   },
 ];
 
-const getUsersWithFriend = (users, friendName) => {
-  const friendArr = [];
-  users.filter((myFriend) => {
-    if (myFriend.friends.includes(friendName)) {
-      return friendArr.push((myFriend.friends += friendName));
-    }
-  });
-  return friendArr;
-};
+const getUsersWithFriend = (users, friendName) =>
+  users.filter((user) => user.friends && user.friends.includes(friendName));
+
 console.log(getUsersWithFriend(allUsers, "Briana Decker"));
 // [
 //   {
